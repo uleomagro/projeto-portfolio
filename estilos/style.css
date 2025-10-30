@@ -1,11 +1,11 @@
 /* 
-  Variáveis para cores:
-  --fundo-principal
-  --texto
-  --texto-inverso
-  --destaque
-  --destaque-inverso
-  --fundo-card
+Variáveis para cores:
+--fundo-principal
+--texto
+--texto-inverso
+--destaque
+--destaque-inverso
+--fundo-card
 */
 
 * {
@@ -14,7 +14,8 @@
   box-sizing: border-box;
 }
 
-:root {
+/* CORES PRINCIPAIS DO PROJETO */
+/* :root {
   --fundo-principal: #f5f5f5;
   --texto: #222222;
   --texto-inverso: #ffffff;
@@ -22,6 +23,40 @@
   --destaque-inverso: #66bbff; 
   --fundo-card: #ffffff;
 }
+body.escuro {
+  --fundo-principal: #121212;
+  --texto: #f5f5f5;
+  --texto-inverso: #000000;
+  --destaque: #66bbff;
+  --destaque-inverso: #3399ff;
+  --fundo-card: #1e1e1e;
+} */
+
+/* MINHAS CORES */
+:root {
+  --fundo-principal: #f5f5f5;
+  --texto: #222222;
+  --texto-inverso: #ffffff;
+
+  /* Verde — tema claro */
+  --destaque: #6416a3;          /* verde 600: botões/links principais */
+  --destaque-inverso: #8d86ef;  /* verde 200: hovers/badges suaves */
+
+  --fundo-card: #ffffff;
+}
+
+body.escuro {
+  --fundo-principal: #121212;
+  --texto: #f5f5f5;
+  --texto-inverso: #000000;
+
+  /* Verde — tema escuro (um pouco mais claro p/ contraste) */
+  --destaque: #9186ef;          /* verde 200: destaca bem no fundo escuro */
+  --destaque-inverso: #4522c5;  /* verde 500: estado ativo/hover */
+  
+  --fundo-card: #1e1e1e;
+}
+
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -266,6 +301,22 @@ footer a:hover {
 }
 
 @media screen and (min-width: 768px) {
+
+  main {
+    grid-template-columns: auto 300px 1fr auto;
+  }
+
+  section#ficha {
+    grid-column: 2 / 3;
+    height: fit-content;
+    position: sticky;
+    top: 65px;
+  }
+
+  section#detalhes {
+    grid-column: 3 / 4;
+  }
+
   #skill-container {
     grid-template-columns: 1fr 1fr;
   }
@@ -284,13 +335,4 @@ footer a:hover {
     max-width: 20%;
     max-height: 200px;
   }
-}
-
-body.escuro {
-  --fundo-principal: #121212;
-  --texto: #f5f5f5;
-  --texto-inverso: #000000;
-  --destaque: #66bbff;
-  --destaque-inverso: #3399ff;
-  --fundo-card: #1e1e1e;
 }
